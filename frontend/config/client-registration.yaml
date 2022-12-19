@@ -5,7 +5,7 @@ metadata:
 spec:
   authServerSelector:
     matchLabels:
-      'name: authserver'
+      name: 'my-first-auth-server'
   authorizationGrantTypes:
     - authorization_code
     - refresh_token
