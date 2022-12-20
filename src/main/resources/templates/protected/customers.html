@@ -12,32 +12,34 @@
 </head>
 <body>
 
-<div th:switch="${customers}">
-    <h2 th:case="null">No customers yet!</h2>
-    <div th:case="*">
-        <h2>Customers</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-            </thead>
+<div th:switch="${customers}" class="container my-5">
+    <div class="col-md-6">
+        <h2 th:case="null">No users yet!</h2>
+        <div th:case="*">
+            <h2 class="my-5">Customers</h2>
+            <table class="table table-striped table-responsive-md">
+                <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
             <tbody>
-            <tr th:each="customer: ${customers}">
-                <td th:text="${customer.firstName}"></td>
-                <td th:text="${customer.lastName}"></td>
-                <td th:text="${customer.email}"></td>
-                <td><a th:href="@{/edit/{id}(id=${customer.id})}">Edit</a></td>
-                <td><a th:href="@{/delete/{id}(id=${customer.id})}">Delete</a></td>
-            </tr>
+                <tr th:each="customer: ${customers}">
+                    <td th:text="${customer.firstName}"></td>
+                    <td th:text="${customer.lastName}"></td>
+                    <td th:text="${customer.email}"></td>
+                    <td><a th:href="@{/protected/customers-edit/{id}(id=${customer.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                    <td><a th:href="@{/protected/customers-delete/{id}(id=${customer.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+                </tr>
             </tbody>
-        </table>
+            </table>
+        </div>
+        <p><a th:href="@{/protected/customers-add/}" class="btn btn-primary"><i class="fas fa-user-plus ml-2"></i></a></p>
     </div>
-    <p><a th:href="@{/protected/customers-add/}">Add a new customer</a></p>
 </div>
 </body>
 </html>
