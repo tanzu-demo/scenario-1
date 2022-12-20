@@ -1,17 +1,3 @@
 spring:
   application:
     name: customer-profile-ui
-  security:
-    oauth2:
-      client:
-        registration:
-          appsso:
-            client-id: <client-id>
-            client-secret: <client-secret>
-            client-authentication-method: basic
-            authorization-grant-type: authorization_code
-            scope:
-              - openid
-        provider:
-          appsso:
-            issuer-uri: <issuer-uri>

@@ -1,3 +1,5 @@
+allow_k8s_contexts('tap-app-tools-2')
+
 SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='dev.local/customer-profile-ui-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='default')

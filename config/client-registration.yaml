@@ -12,6 +12,6 @@ spec:
   clientAuthenticationMethod: basic
   requireUserConsent: false
   redirectURIs:
-    - "https://frontend.scenario1.35.192.91.18.nip.io/login/oauth2/code/customer-profile-ui"
+    - http://customer-profile-ui.my-apps.tap.desktop-scenarios.tapdemo.vmware.com/login/oauth2/code/customer-profile-ui
   scopes:
     - name: openid
