@@ -31,8 +31,8 @@
                 <td th:text="${customer.firstName}"></td>
                 <td th:text="${customer.lastName}"></td>
                 <td th:text="${customer.email}"></td>
-                <td><a th:href="@{/edit/{id}(id=${customer.id})}">Edit</a></td>
-                <td><a th:href="@{/delete/{id}(id=${customer.id})}">Delete</a></td>
+                <td><a th:href="@{/protected/customers-edit/{id}(id=${customer.id})}">Edit</a></td>
+                <td><a th:href="@{/protected/customers-delete/{id}(id=${customer.id})}">Delete</a></td>
             </tr>
             </tbody>
         </table>

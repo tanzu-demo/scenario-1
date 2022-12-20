@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles/shard.min.css">
+    <title>Add Customer</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/protected/customers-edit/{id}(id=${customer.id})}" th:object="${customer}" method="post">
+    <label for="firstName">First Name</label>
+    <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+    <label for="lastName">Last Name</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+    <label for="email">Email</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="Email">
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    <input type="submit" value="Update Customer">
+</form></div>
+</body>
+</html>
