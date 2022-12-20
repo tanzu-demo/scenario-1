@@ -12,16 +12,36 @@
 </head>
 <body>
 
-<form action="#" th:action="@{/protected/customers-add}" th:object="${customer}" method="post">
-    <label for="firstName">First Name</label>
-    <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
-    <label for="lastName">Last Name</label>
-    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
-    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
-    <label for="email">Email</label>
-    <input type="text" th:field="*{email}" id="email" placeholder="Email">
-    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-    <input type="submit" value="Add Customer">
-</form></div>
+<div class="container my-5">
+    <h2 class="mb-5">New Customer</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="#" th:action="@{/protected/customers-add}" th:object="${customer}" method="post">
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="firstName" class="col-form-label">First Name</label>
+                        <input type="text" th:field="*{firstName}" class="form-control" id="firstName" placeholder="First Name">
+                        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="lastName" class="col-form-label">Last Name</label>
+                        <input type="text" th:field="*{lastName}" class="form-control" id="lastName" placeholder="Last Name">
+                        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="email" class="col-form-label">Email</label>
+                        <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Email">
+                        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <input type="submit" class="btn btn-primary" value="Add Customer">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

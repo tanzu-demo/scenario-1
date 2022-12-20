@@ -12,10 +12,27 @@
 </head>
 <body>
 
-<form action="#" th:action="@{/protected/customers-delete/{id}(id=${customer.id})}" th:object="${customer}" method="post">
-    <label>Are you sure that you want to delete Customer&nbsp;</label><label th:text="|${customer.firstName} ${customer.lastName}?|"></label>
-    <button type="submit" name="action" value="cancel">No</button>
-    <button type="submit" name="action" value="submit">Yes I'm Sure</button>
-</form></div>
+<div class="container my-5">
+    <h2 class="mb-5">Delete Customer</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="#" th:action="@{/protected/customers-delete/{id}(id=${customer.id})}" th:object="${customer}" method="post">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label>Are you sure that you want to delete Customer&nbsp;</label><label th:text="|${customer.firstName} ${customer.lastName}?|"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <button type="submit" name="action" value="cancel" class="btn btn-primary">No</button>
+                    </div>
+                    <div class="col-md-6 mt-5">
+                        <button type="submit" name="action" value="submit" class="btn btn-primary">Yes I'm Sure</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
